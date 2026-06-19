@@ -12,6 +12,28 @@ public class Main {
         Course course1 = new Course("C001", "Java Fundamentals", 14, "Beginner", "Programming", true);
         Course course2 = new Course("C002", "React Frontend Development", 21, "Intermediate", "Frontend", true);
 
+        CourseOffering offering1 = new CourseOffering(
+                "OFF001",
+                "Java Fundamentals - June 2026 Intake",
+                course1,
+                instructor1,
+                "2026-06-19",
+                "2026-06-20",
+                25,
+                "Online"
+        );
+
+        CourseOffering offering2 = new CourseOffering(
+                "OFF002",
+                "React Frontend Development - July 2026 Intake",
+                course2,
+                instructor2,
+                "2026-07-01",
+                "2026-07-05",
+                30,
+                "Hybrid"
+        );
+
         Student student1 = new Student("S001", "Charlie Brown", "cFq0l@example.com");
         Student student2 = new Student("S002", "Daisy Duck", "d4oQG@example.com");
 
@@ -25,6 +47,10 @@ public class Main {
         System.out.println("Course Summaries:");
         course1.printSummary();
         course2.printSummary();
+
+        System.out.println("Course Offering Summaries:");
+        offering1.printOfferingSummary();
+        offering2.printOfferingSummary();
 
         System.out.println("Student Profiles:");
         student1.printProfile();

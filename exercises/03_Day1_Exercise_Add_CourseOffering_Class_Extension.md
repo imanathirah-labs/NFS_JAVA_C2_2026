@@ -139,12 +139,12 @@ Submit:
 
 Before submitting, check:
 
-- [ ] `CourseOffering.java` exists.
-- [ ] The class has all required fields.
-- [ ] Constructor is working.
-- [ ] Getter methods are included.
-- [ ] `printOfferingSummary()` works.
-- [ ] `Main.java` creates at least two course offerings.
-- [ ] Program runs successfully.
-- [ ] Code has been committed and pushed to GitHub.
-- [ ] README reflection is completed.
+- [x] `CourseOffering.java` exists.
+- [x] The class has all required fields.
+- [x] Constructor is working.
+- [x] Getter methods are included.
+- [x] `printOfferingSummary()` works.
+- [x] `Main.java` creates at least two course offerings.
+- [x] Program runs successfully.
+- [x] Code has been committed and pushed to GitHub.
+- [x] README reflection is completed.
