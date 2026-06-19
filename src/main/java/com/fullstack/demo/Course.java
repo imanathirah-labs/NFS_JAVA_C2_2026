@@ -6,12 +6,16 @@ public class Course {
     private int durationHours;
     private String level;
     private Instructor instructor;
+    private String category;
+    private boolean active;
 
-    public Course(String courseId, String title, int durationHours, String level) {
+    public Course(String courseId, String title, int durationHours, String level, String category, boolean active) {
         setCourseId(courseId);
         setTitle(title);
         setDurationHours(durationHours);
         setLevel(level);
+        this.category = requireText(category, "Course category");
+        this.active = active;
     }
 
     public String getCourseId() {
@@ -55,6 +59,20 @@ public class Course {
 
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
+    }
+
+    public void printSummary() {
+        String instructorName = instructor == null ? "Not assigned yet" : instructor.getInstructorName();
+        String statusText = active ? "Active" : "Inactive";
+
+        System.out.println("Course ID: " + courseId);
+        System.out.println("Title: " + title);
+        System.out.println("Duration: " + durationHours + " hours");
+        System.out.println("Level: " + level);
+        System.out.println("Category: " + category);
+        System.out.println("Status: " + statusText);
+        System.out.println("Instructor: " + instructorName);
+        System.out.println();
     }
 
     private String requireText(String value, String fieldName) {

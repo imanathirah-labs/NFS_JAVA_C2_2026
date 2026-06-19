@@ -55,3 +55,10 @@ Submit:
 1. Screenshot of updated course output.
 2. GitHub commit link or screenshot.
 3. Brief explanation of what changed in `Course.java`.
+- Added two new fields: `private String category;` and `private boolean active;`
+- Updated the constructor so every `Course` is created with category and active status
+- Stored `category` and `active` in the object instead of leaving them unset
+- Added `printSummary()` so it now prints:
+  - `Category: <category>`
+  - `Status: Active` or `Status: Inactive`
+- Used `active ? "Active" : "Inactive"` so it prints friendly text, not `true`/`false`
