@@ -4,6 +4,7 @@ import com.fullstack.demo.exception.CourseNotFoundException;
 import com.fullstack.demo.exception.DuplicateCourseException;
 import com.fullstack.demo.exception.InvalidCourseException;
 import com.fullstack.demo.model.Course;
+import com.fullstack.demo.model.Instructor;
 import com.fullstack.demo.repository.CourseRepository;
 import java.util.List;
 
@@ -48,8 +49,27 @@ public class CourseService {
         //     safeLevel = level.trim().toLowerCase();
         // }
 
-        return courseRepository.findAll().stream()
-                .filter(course -> course.getLevel().toLowerCase().equals(safeLevel))
+        return courseRepository.findAll()
+                .stream()
+                .filter(course -> course.getLevel().equalsIgnoreCase(safeLevel))
+                .toList();
+    }
+
+    public Course assignInstructor(String courseId, Instructor instructor) {
+        Course course = getCourseById(courseId);
+        course.setInstructor(instructor);
+        return courseRepository.save(course);
+    }
+
+    public List<Course> searchByInstructorName(String instructorName) {
+        String safeInstructorName = (instructorName == null) ? "" : instructorName.trim().toLowerCase();
+        return courseRepository.findAll()
+                .stream()
+                .filter(course -> course.getInstructor() != null)
+                .filter(course -> course.getInstructor()
+                        .getInstructorName()
+                        .toLowerCase()
+                        .contains(safeInstructorName))
                 .toList();
     }
 
