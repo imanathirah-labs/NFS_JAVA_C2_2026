@@ -7,8 +7,9 @@ public class CourseOffering {
     private String startDate;
     private String endDate;
     private int capacity;
+    private String deliveryMode;
 
-    public CourseOffering(String offeringId, String offeringName, Course course, Instructor instructor, String startDate, String endDate, int capacity) {
+    public CourseOffering(String offeringId, String offeringName, Course course, Instructor instructor, String startDate, String endDate, int capacity, String deliveryMode) {
         this.offeringId = offeringId;
         this.offeringName = offeringName;
         this.course = course;
@@ -16,6 +17,7 @@ public class CourseOffering {
         this.startDate = startDate;
         this.endDate = endDate;
         this.capacity = capacity;
+        this.deliveryMode = deliveryMode;
     }
 
     public String getOfferingId() {
@@ -57,6 +59,7 @@ public class CourseOffering {
         System.out.println("Start Date: " + startDate);
         System.out.println("End Date: " + endDate);
         System.out.println("Capacity: " + capacity);
+        System.out.println("Delivery Mode: " + deliveryMode);
         System.out.println();
     }
 }
