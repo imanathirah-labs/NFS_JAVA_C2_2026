@@ -31,6 +31,28 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public List<Course> searchByTitle(String keyword) {
+        String safeKeyword = (keyword == null) ? "" : keyword.trim().toLowerCase();
+        return courseRepository.findAll().stream()
+                .filter(course -> course.getTitle().toLowerCase().contains(safeKeyword))
+                .toList();
+    }
+
+    public List<Course> filterByLevel(String level) {
+        String safeLevel = (level == null) ? "" : level.trim().toLowerCase();
+        
+        // String safeLevel;
+        // if (level == null || level.trim().isEmpty()) {
+        //     safeLevel = "";
+        // } else {
+        //     safeLevel = level.trim().toLowerCase();
+        // }
+
+        return courseRepository.findAll().stream()
+                .filter(course -> course.getLevel().toLowerCase().equals(safeLevel))
+                .toList();
+    }
+
     private void validateCourse(Course course) {
         if (course == null) {
             throw new InvalidCourseException("Course cannot be null.");
