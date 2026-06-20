@@ -1,4 +1,4 @@
-package com.fullstack.demo;
+package com.fullstack.demo.model;
 
 public class Instructor {
     private String instructorId;
@@ -49,10 +49,4 @@ public class Instructor {
         System.out.println("----------------------------");
     }
 
-    @Override
-    public String toString() {
-        return "Instructor ID: " + instructorId + "\n"
-                + "Name: " + instructorName + "\n"
-                + "Expertise: " + expertise;
-    }
 }

@@ -1,4 +1,4 @@
-package com.fullstack.demo;
+package com.fullstack.demo.model;
 
 public class Course {
     private String courseId;
@@ -60,6 +60,17 @@ public class Course {
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
+    // get, set, is methods
+
+    public String getSummary() {
+        String instructorName = instructor == null ? "Not assigned yet" : instructor.getInstructorName();
+        return "Course ID: " + courseId 
+        + ", Title: " + title 
+        + ", Duration: " + durationHours 
+        + " hours," +
+        "Level: " + level
+        + ", Insructor: " + instructorName;
+    }
 
     public void printSummary() {
         String instructorName = instructor == null ? "Not assigned yet" : instructor.getInstructorName();
@@ -84,12 +95,7 @@ public class Course {
 
     @Override
     public String toString() {
-        String instructorName = instructor == null ? "Not assigned yet" : instructor.getInstructorName();
-
-        return "Course ID: " + courseId + "\n"
-                + "Title: " + title + "\n"
-                + "Duration: " + durationHours + " hours\n"
-                + "Level: " + level + "\n"
-                + "Instructor: " + instructorName;
+        return getSummary();
     }
+
 }

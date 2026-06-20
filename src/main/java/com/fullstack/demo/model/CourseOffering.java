@@ -1,5 +1,4 @@
-package com.fullstack.demo;
-
+package com.fullstack.demo.model;
 public class CourseOffering {
     private String offeringId;
     private String offeringName;
@@ -8,9 +7,8 @@ public class CourseOffering {
     private String startDate;
     private String endDate;
     private int capacity;
-    private String deliveryMode;
 
-    public CourseOffering(String offeringId, String offeringName, Course course, Instructor instructor, String startDate, String endDate, int capacity, String deliveryMode) {
+    public CourseOffering(String offeringId, String offeringName, Course course, Instructor instructor, String startDate, String endDate, int capacity) {
         this.offeringId = offeringId;
         this.offeringName = offeringName;
         this.course = course;
@@ -18,7 +16,6 @@ public class CourseOffering {
         this.startDate = startDate;
         this.endDate = endDate;
         this.capacity = capacity;
-        this.deliveryMode = deliveryMode;
     }
 
     public String getOfferingId() {
@@ -49,10 +46,6 @@ public class CourseOffering {
         return capacity;
     }
 
-    public String getDeliveryMode() {
-        return deliveryMode;
-    }
-
     public void printOfferingSummary() {
         String courseName = course == null ? "Not assigned" : course.getTitle();
         String instructorName = instructor == null ? "Not assigned" : instructor.getInstructorName();
@@ -64,7 +57,6 @@ public class CourseOffering {
         System.out.println("Start Date: " + startDate);
         System.out.println("End Date: " + endDate);
         System.out.println("Capacity: " + capacity);
-        System.out.println("Delivery Mode: " + deliveryMode);
         System.out.println();
     }
 }

@@ -1,4 +1,8 @@
 package com.fullstack.demo;
+import com.fullstack.demo.model.Course;
+import com.fullstack.demo.model.CourseOffering;
+import com.fullstack.demo.model.Instructor;
+import com.fullstack.demo.model.Student;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,8 +23,7 @@ public class Main {
                 instructor1,
                 "2026-06-19",
                 "2026-06-20",
-                25,
-                "Online"
+                25
         );
 
         CourseOffering offering2 = new CourseOffering(
@@ -30,8 +33,7 @@ public class Main {
                 instructor2,
                 "2026-07-01",
                 "2026-07-05",
-                30,
-                "Hybrid"
+                30
         );
 
         Student student1 = new Student("S001", "Charlie Brown", "cFq0l@example.com");
