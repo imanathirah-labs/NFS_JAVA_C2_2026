@@ -73,6 +73,22 @@ public class CourseService {
                 .toList();
     }
 
+    public void deleteCourse(String courseId) {
+        if (!courseRepository.existsById(courseId)) {
+            throw new CourseNotFoundException("Course with ID '" + courseId + "' not found.");
+        }
+        courseRepository.deleteById(courseId);
+    }
+
+    public Course updateDuration(String courseId, int newDurationHours) {
+        if (newDurationHours <= 0) {
+            throw new InvalidCourseException("Course duration must be greater than zero.");
+        }
+        Course course = getCourseById(courseId);
+        course.setDurationHours(newDurationHours);
+        return courseRepository.save(course);
+    }
+
     private void validateCourse(Course course) {
         if (course == null) {
             throw new InvalidCourseException("Course cannot be null.");
