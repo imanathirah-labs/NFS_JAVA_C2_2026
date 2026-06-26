@@ -157,13 +157,13 @@ Course course = courseService.getCourseById("C004");
 
 Submit evidence that:
 
-- [ ] `CodeFlowPractice.java` exists.
-- [ ] Repository and service are created correctly.
-- [ ] Course `C004` is created through `CourseService`.
-- [ ] Course `C004` is retrieved through `CourseService`.
-- [ ] Course details are printed.
-- [ ] Your code contains trace comments explaining the flow.
-- [ ] Code compiles and runs.
+- [x] `CodeFlowPractice.java` exists.
+- [x] Repository and service are created correctly.
+- [x] Course `C004` is created through `CourseService`.
+- [x] Course `C004` is retrieved through `CourseService`.
+- [x] Course details are printed.
+- [x] Your code contains trace comments explaining the flow.
+- [x] Code compiles and runs.
 
 ## README reflection
 
