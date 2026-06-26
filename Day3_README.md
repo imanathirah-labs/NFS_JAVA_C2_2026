@@ -19,3 +19,8 @@ Answer:
 Throwing `CourseNotFoundException` is better because the service reports the error without choosing how it should be shown.
 - A console app, web API, or frontend app can each catch the exception and display a different friendly message.
 - If the service printed directly, it would force one presentation style and make the service harder to reuse.
+
+Why is CourseOffering a better design than putting start date, end date, and capacity directly inside Course?
+
+Answer:
+The same course can be offered multiple times with different start dates, end dates, and capacities. If these were in Course, we need to create duplicate course objects.
