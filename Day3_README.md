@@ -24,3 +24,18 @@ Why is CourseOffering a better design than putting start date, end date, and cap
 
 Answer:
 The same course can be offered multiple times with different start dates, end dates, and capacities. If these were in Course, we need to create duplicate course objects.
+
+Which version is easier to understand: loop or stream? Why?
+
+Answer:
+The loop version is easier to understand for beginners because it is more explicit and step-by-step:
+Create an empty list.
+- Iterate through each course.
+- Check the condition.
+- Add to results.
+The stream version is more compact but requires understanding functional concepts like filter() and method chaining, so it takes practice.
+
+What does filter() do in a stream?
+
+Answer:
+filter() takes a condition (predicate) and keeps only the items that match it. Items that do not match are removed from the stream.
