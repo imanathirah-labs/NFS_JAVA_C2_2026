@@ -39,3 +39,17 @@ What does filter() do in a stream?
 
 Answer:
 filter() takes a condition (predicate) and keeps only the items that match it. Items that do not match are removed from the stream.
+
+How is StudentService similar to CourseService?
+
+Answer:
+StudentService is similar to CourseService because both:
+
+- Use a repository to store and retrieve data
+- Contain business logic for creating, finding, and searching objects
+
+Which file stores students temporarily while the program is running?
+
+Answer:
+The file is InMemoryStudentRepository.java.
+It stores students temporarily in memory using a `LinkedHashMap` while the program is running.
