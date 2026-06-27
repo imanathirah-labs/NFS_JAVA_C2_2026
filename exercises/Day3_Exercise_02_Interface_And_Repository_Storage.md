@@ -164,13 +164,13 @@ InMemoryCourseRepository.java
 
 ## Submission checklist
 
-- [ ] `RepositoryPractice.java` exists.
-- [ ] You used `CourseRepository courseRepository = new InMemoryCourseRepository();`.
-- [ ] You saved at least three courses through the repository.
-- [ ] You printed all courses using a loop.
-- [ ] You used `Optional<Course>` when finding by ID.
-- [ ] You used `existsById()`.
-- [ ] Code compiles and runs.
+- [x] `RepositoryPractice.java` exists.
+- [x] You used `CourseRepository courseRepository = new InMemoryCourseRepository();`.
+- [x] You saved at least three courses through the repository.
+- [x] You printed all courses using a loop.
+- [x] You used `Optional<Course>` when finding by ID.
+- [x] You used `existsById()`.
+- [x] Code compiles and runs.
 
 ## README reflection
 
