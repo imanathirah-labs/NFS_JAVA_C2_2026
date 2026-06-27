@@ -30,7 +30,7 @@ DOM = Document Object Model browser's object version of HTML page
 const courseList = document.getElementById("course-list"); // Finding the HTML element
 
 courses.forEach(course => {
-    const courseCard = document.createElement("div");
+    const courseCard = document.createElement("div"); // Creating a new div element
 
     courseCard.innerHTML = `
         <h3>${course.title}</h3>
@@ -38,5 +38,5 @@ courses.forEach(course => {
         <p><strong>Duration (Hours):</strong> ${course.durationHours}</p>
         <p><strong>Level:</strong> ${course.level}</p>
     `;
-    courseList.appendChild(courseCard);
+    courseList.appendChild(courseCard); // Put the new element into the page under the element with id "course-list"
 });

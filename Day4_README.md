@@ -37,3 +37,9 @@ Answer:
 Answer:
 - `shift` removes the first item from the array and returns it.
 - `unshift` adds one or more items to the beginning of the array and returns the new length.
+
+How is JavaScript filter used in a search feature?
+
+Answer:
+In a search feature, filter goes through the student array and returns only the students whose names match the search text.
+That filtered array is then passed to renderStudents(...) to show only matching students.
