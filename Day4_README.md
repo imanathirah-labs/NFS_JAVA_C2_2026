@@ -43,3 +43,13 @@ How is JavaScript filter used in a search feature?
 Answer:
 In a search feature, filter goes through the student array and returns only the students whose names match the search text.
 That filtered array is then passed to renderStudents(...) to show only matching students.
+
+## Exercise 7
+1. What does async mean?
+It marks a function as asynchronous, meaning the function can pause while waiting for time-consuming tasks and return a promise.
+
+2. What does await do?
+It pauses execution inside an async function until a promise resolves, so the next line runs only after the awaited task finishes.
+
+3. What does fetch do?
+It requests data from a URL or file, returning a promise for the HTTP response.
