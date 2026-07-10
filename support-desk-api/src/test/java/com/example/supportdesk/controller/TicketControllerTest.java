@@ -15,6 +15,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,6 +29,8 @@ class TicketControllerTest {
 
     @MockBean
     private TicketService ticketService;
+
+    private static final String JSON_TEMPLATE = "{\"title\": \"%s\", \"description\": \"%s\", \"category\": \"%s\", \"priority\": \"%s\", \"createdBy\": \"%s\"}";
 
     @Test
     void shouldReturnTicketList() throws Exception {
@@ -74,12 +77,52 @@ class TicketControllerTest {
     }
 
     @Test
-    void shouldReturnNotFoundWhenTicketDoesNotExist() throws Exception {
-        when(ticketService.getTicketById("T999"))
-                .thenThrow(new ResourceNotFoundException("Ticket T999 was not found"));
+    void shouldCreateTicket() throws Exception {
+        TicketResponse created = new TicketResponse(
+                "T004",
+                "VPN connection not working",
+                "User cannot connect to company VPN from home.",
+                "Network",
+                "MEDIUM",
+                "OPEN",
+                "siti@example.com",
+                "2026-07-10"
+        );
 
-        mockMvc.perform(get("/api/tickets/T999"))
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.message").value("Ticket T999 was not found"));
+        when(ticketService.createTicket(org.mockito.ArgumentMatchers.any())).thenReturn(created);
+
+        String requestBody = String.format(JSON_TEMPLATE,
+                "VPN connection not working",
+                "User cannot connect to company VPN from home.",
+                "Network",
+                "MEDIUM",
+                "siti@example.com"
+        );
+
+        mockMvc.perform(post("/api/tickets")
+                        .contentType("application/json")
+                        .content(requestBody))
+                .andExpect(status().isCreated())
+                .andExpect(content().contentTypeCompatibleWith("application/json"))
+                .andExpect(jsonPath("$.id").value("T004"))
+                .andExpect(jsonPath("$.status").value("OPEN"))
+                .andExpect(jsonPath("$.createdBy").value("siti@example.com"));
+    }
+
+    @Test
+    void shouldReturnBadRequestForInvalidTicket() throws Exception {
+        String requestBody = String.format(JSON_TEMPLATE,
+                "",
+                "",
+                "",
+                "",
+                ""
+        );
+
+        mockMvc.perform(post("/api/tickets")
+                        .contentType("application/json")
+                        .content(requestBody))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value("Validation failed"));
     }
 }

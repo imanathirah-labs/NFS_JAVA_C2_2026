@@ -171,9 +171,9 @@ Submit:
 
 ## Completion Checklist
 
-- [ ] `POST /api/tickets` works.
-- [ ] Valid request returns 201.
-- [ ] Created ticket has an ID.
-- [ ] Created ticket has status `OPEN`.
-- [ ] Invalid request returns 400.
-- [ ] Validation response is understandable.
+- [X] `POST /api/tickets` works.
+- [X] Valid request returns 201.
+- [X] Created ticket has an ID.
+- [X] Created ticket has status `OPEN`.
+- [X] Invalid request returns 400.
+- [X] Validation response is understandable.
