@@ -1,0 +1,11 @@
+### Get all tickets
+GET http://localhost:8080/api/tickets
+Accept: application/json
+
+### Get a single existing ticket
+GET http://localhost:8080/api/tickets/T001
+Accept: application/json
+
+### Get a missing ticket
+GET http://localhost:8080/api/tickets/T999
+Accept: application/json

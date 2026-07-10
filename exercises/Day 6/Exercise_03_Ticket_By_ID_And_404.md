@@ -137,8 +137,8 @@ Submit:
 
 ## Completion Checklist
 
-- [ ] `GET /api/tickets/{id}` works for existing tickets.
-- [ ] Missing ticket returns 404.
-- [ ] Missing ticket response contains a clear message.
-- [ ] Controller does not contain search logic.
-- [ ] Service handles the ticket lookup.
+- [X] `GET /api/tickets/{id}` works for existing tickets.
+- [X] Missing ticket returns 404.
+- [X] Missing ticket response contains a clear message.
+- [X] Controller does not contain search logic.
+- [X] Service handles the ticket lookup.
