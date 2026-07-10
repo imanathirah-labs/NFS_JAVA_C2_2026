@@ -130,9 +130,9 @@ Submit:
 
 ## Completion Checklist
 
-- [ ] Ticket response DTO created.
-- [ ] Ticket service created.
-- [ ] Ticket controller created.
-- [ ] `GET /api/tickets` works.
-- [ ] Response is a JSON array.
-- [ ] Ticket list is not stored directly in the controller.
+- [X] Ticket response DTO created.
+- [X] Ticket service created.
+- [X] Ticket controller created.
+- [X] `GET /api/tickets` works.
+- [X] Response is a JSON array.
+- [X] Ticket list is not stored directly in the controller.
