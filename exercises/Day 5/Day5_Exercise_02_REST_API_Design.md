@@ -123,10 +123,10 @@ Submit one Markdown file or document containing:
 ## Completion Checklist
 Before submitting, check that you have:
 
-- [ ] Included at least six endpoints
-- [ ] Used resource-style URLs
-- [ ] Used suitable HTTP methods
-- [ ] Identified when a request body is needed
-- [ ] Included success status codes
-- [ ] Included possible error status codes
-- [ ] Explained at least two error cases
+- [X] Included at least six endpoints
+- [X] Used resource-style URLs
+- [X] Used suitable HTTP methods
+- [X] Identified when a request body is needed
+- [X] Included success status codes
+- [X] Included possible error status codes
+- [X] Explained at least two error cases
